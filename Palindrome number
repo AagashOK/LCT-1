@@ -1,23 +1,18 @@
-#include<stdio.h>
-
-int main()
-{
-    int n,c,r=0;
-    scanf("%d",&n);
-    c=n;
-    while(c>0)
+bool isPalindrome(int x) {
+    int t=x;
+    long int r=0;
+    while(t!=0)
     {
-        r=r*10;
-        r=r+c%10;
-        c/=10;
+        int l=t%10;
+        r=r*10+l;
+        t=t/10;
     }
-    if(n==r)
+    if(r==x && x>=0)
     {
-        printf("true");
+        return true;
     }
-    else
-    {
-        printf("false");
+    else{
+        return false;
     }
-    return 0;
+    
 }
